@@ -3,7 +3,7 @@
 require ("helper.php");
 
 $dbhost1 = "localhost";
-$database1 = "mercedes-benz";
+$database1 = "vizio";
 $username1 = "root";
 $passwd1 = "root";
 
@@ -15,7 +15,7 @@ try {
 }
 
 $dbhost2 = "localhost";
-$database2 = "mercedes-benz";
+$database2 = "vizio2";
 $username2 = "root";
 $passwd2 = "root";
 

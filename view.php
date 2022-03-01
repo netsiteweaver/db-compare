@@ -11,12 +11,12 @@
     <?php //debug($output);?>
     <div class="row">
         <div class="col-6">
-            <h1 class="text-center">Database: <?php echo $output['database'];?></h1>
-            <?php foreach($output['tables'] as $i => $table):?>
-            <table class="table table-compact table-bordered table-hover">
+            <h1 class="text-center">Database: <?php echo $output1['database'];?></h1>
+            <?php foreach($output1['tables'] as $i => $table):?>
+            <table class="table table-sm table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th colspan='6' class='text-center text-uppercase'>Table: <?php echo ($table['Tables_in_'.$output['database']]);?></th>
+                        <th colspan='6' class='text-center text-uppercase'>Table: <?php echo ($table['Tables_in_'.$output1['database']]);?></th>
                     </tr>
                     <tr>
                         <th>FIELD</th>
@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($output['tables'][$i]['columns'] as $col):?>
+                    <?php foreach($output1['tables'][$i]['columns'] as $col):?>
                     <tr>
                         <td><?php echo $col['Field'];?></td>
                         <td><?php echo $col['Type'];?></td>
@@ -42,7 +42,38 @@
             </table>
             <?php endforeach;?>
         </div>
-
+        <div class="col-6">
+            <h1 class="text-center">Database: <?php echo $output2['database'];?></h1>
+            <?php foreach($output2['tables'] as $i => $table):?>
+            <table class="table table-sm table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th colspan='6' class='text-center text-uppercase'>Table: <?php echo ($table['Tables_in_'.$output2['database']]);?></th>
+                    </tr>
+                    <tr>
+                        <th>FIELD</th>
+                        <th>TYPE</th>
+                        <th>NULL</th>
+                        <th>KEY</th>
+                        <th>DEFAULT</th>
+                        <th>EXTRA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($output2['tables'][$i]['columns'] as $col):?>
+                    <tr>
+                        <td><?php echo $col['Field'];?></td>
+                        <td><?php echo $col['Type'];?></td>
+                        <td><?php echo $col['Null'];?></td>
+                        <td><?php echo $col['Key'];?></td>
+                        <td><?php echo $col['Default'];?></td>
+                        <td><?php echo $col['Extra'];?></td>
+                    </tr>
+                    <?php endforeach;?>
+                </tbody>
+            </table>
+            <?php endforeach;?>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
