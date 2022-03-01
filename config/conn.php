@@ -1,6 +1,7 @@
 <?php
 
-require ("helper.php");
+require ("includes/helper.php");
+require ("includes/functions.php");
 
 $dbhost1 = "localhost";
 $database1 = "vizio";
