@@ -16,7 +16,7 @@ try {
 }
 
 $dbhost2 = "localhost";
-$database2 = "vizio2";
+$database2 = "vizio_db_20220216";
 $username2 = "root";
 $passwd2 = "root";
 
