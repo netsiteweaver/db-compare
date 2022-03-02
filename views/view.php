@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <style>
         #overlay {
             position:fixed;
@@ -20,16 +21,43 @@
             height: 100vh;
             padding: 50px;
         }
-        #closeOverlay {
+        #overlay.minimized{
+            width: 100px;
+            height: 55px;
+            top: unset;
+            right: unset;
+            overflow: hidden;
+            bottom: 5px;
+            right: 10px;
+            padding:10px;
+        }
+
+        #overlay.minimized .result {
+            display:none;
+        }
+        #closeOverlay, #minimizeOverlay, #restoreOverlay {
             position: absolute;
-            right:20px;
             top:20px;
             font-size:36px;
             font-weight: bold;
             color:#fff;
             cursor: pointer;
         }
-    </style>
+
+        #overlay.minimized #closeOverlay, #overlay.minimized #minimizeOverlay, #overlay.minimized #restoreOverlay {
+            padding: 0;
+            font-size:unset;
+        }
+
+        #closeOverlay {
+            right:20px;
+        }
+
+        #minimizeOverlay, #restoreOverlay {
+            right:70px;
+        }
+
+</style>
     <title>DB Compare</title>
 </head>
 

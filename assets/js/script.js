@@ -17,9 +17,21 @@ jQuery(function(){
         $('#overlay').remove();
     })
 
+    $('body').on('click','#minimizeOverlay', function(){
+        $(this).addClass("hidden");
+        $('#restoreOverlay').removeClass("hidden");
+        $('#overlay').addClass("minimized")
+    })
+
+    $('body').on('click','#restoreOverlay', function(){
+        $(this).addClass("hidden");
+        $('#minimizeOverlay').removeClass("hidden");
+        $('#overlay').removeClass("minimized")
+    })
+
     let maxRows = (tableLeft.length > tableRight.length) ? tableLeft.length : tableRight.length;
 
-    $('body').append("<div id='overlay'><div id='closeOverlay'>X</div><div class='result'>Analysing ...<br></div></div>");
+    $('body').append("<div id='overlay'><div id='minimizeOverlay'><i class='fa fa-window-minimize'></i></div><div id='restoreOverlay' class='hidden'><i class='fa fa-window-restore'></i></div><div id='closeOverlay'><i class='fa fa-window-close-o'></i></div><div class='result'>Analysing ...<br></div></div>");
 
     if(tableLeft.length != tableRight.length){
         $('.result').append("Total tables and fields differs by "+ (tableLeft.length-tableRight.length)+"<br>");
